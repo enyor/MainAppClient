@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.banticsoftware.mainapp.mainapp.Tab1Fragment">
+    tools:context="co.kaizenpro.mainapp.mainapp.Tab1Fragment">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -12,59 +12,101 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/avatar"
+            android:id="@+id/img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            android:layout_marginTop="16dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/cover"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@mipmap/ic_launcher_round" />
 
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="@android:style/Widget.DeviceDefault.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="8dp"
+            android:isIndicator="false"
+            android:numStars="5"
+            android:rating="3.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
-            android:id="@+id/Nombre"
+            android:id="@+id/tnombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/roboto"
+            android:text="Aurora bastidas"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tactualizacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginEnd="24dp"
+            android:text="Ult. Actualización 15 horas"
+            android:textSize="8sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toTopOf="@+id/separador2"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tespecialidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:shadowColor="@color/common_google_signin_btn_text_light_pressed"
-            android:text="Aurora Bastidas"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused"
-            android:textSize="20sp"
-            android:textStyle="italic"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/avatar" />
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/roboto"
+            android:text="Especialista en coloración"
+            android:textAlignment="center"
+            android:textSize="12sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toTopOf="@+id/appBarLayout"
+            app:layout_constraintEnd_toEndOf="@+id/tnombre"
+            app:layout_constraintStart_toStartOf="@+id/tnombre"
+            app:layout_constraintTop_toBottomOf="@+id/tnombre" />
 
         <TextView
-            android:id="@+id/Especialidad"
-            android:layout_width="wrap_content"
+            android:id="@+id/direccion"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="4dp"
-            android:shadowColor="@color/common_google_signin_btn_text_light_pressed"
-            android:text="Especialista en coloración, 26 años de experiencia"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:text="Dirección:"
             android:textAlignment="center"
-            android:textColor="@color/azul"
-            android:textSize="13sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Nombre" />
-
-        <View
-            android:id="@+id/separador"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            android:background="@android:color/darker_gray"
+            android:textSize="12sp"
+            android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Especialidad" />
+            app:layout_constraintTop_toBottomOf="@+id/separador2" />
+
+        <View
+            android:id="@+id/separador2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tespecialidad" />
 
         <TextView
             android:id="@+id/t1"
@@ -74,8 +116,9 @@
 
             android:layout_marginEnd="16dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="32dp"
             android:background="@color/Magent2"
+            android:fontFamily="@font/roboto"
             android:text="El Trader está esperando tu reserva, solo elije la hora que más te convenga:"
             android:textAlignment="center"
             android:textAllCaps="true"
@@ -83,43 +126,52 @@
             android:textSize="12sp"
             android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/separador" />
+            app:layout_constraintTop_toBottomOf="@+id/direccion" />
 
         <RadioGroup
             android:id="@+id/radioGroup"
-            android:layout_width="115dp"
-            android:layout_height="106dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
 
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.06"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/t1">
 
             <RadioButton
                 android:id="@+id/rdbOne"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:checked="false"
                 android:text=""
-                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textColor="@color/cardview_dark_background"
+                android:textColorHint="@color/Verde"
                 android:textSize="10sp" />
 
             <RadioButton
                 android:id="@+id/rdbTwo"
-                android:layout_width="126dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:checked="false"
+                android:shadowColor="@color/Verde"
                 android:text=""
-                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textColor="@color/cardview_dark_background"
                 android:textSize="10sp" />
 
             <RadioButton
                 android:id="@+id/rdbThree"
-                android:layout_width="135dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:checked="false"
+                android:shadowColor="@color/Verde"
                 android:text=""
-                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textColor="@color/cardview_dark_background"
                 android:textSize="10sp" />
 
         </RadioGroup>
@@ -129,51 +181,53 @@
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="4dp"
             android:backgroundTint="@color/azul"
             android:text="Reservar"
             android:textAllCaps="false"
             android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:textColorLink="@color/azul"
             android:textStyle="italic"
-            app:layout_constraintBottom_toTopOf="@+id/btpreserva"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
         <TextView
             android:id="@+id/tverror"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:textColor="@color/colorAccent"
-            app:layout_constraintBottom_toTopOf="@+id/btnavegar"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/radioGroup"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+            app:layout_constraintStart_toEndOf="@+id/radioGroup"
+            app:layout_constraintTop_toTopOf="@+id/radioGroup" />
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="163dp"
+            android:layout_height="42dp"
 
 
-            android:layout_marginTop="28dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
             android:background="@color/azul"
             android:text='"Basado en la distancia y en tiempo máximo de espera de tu Trader puedes reservar en estos horarios"'
             android:textAlignment="center"
             android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:textSize="10sp"
             android:textStyle="italic"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/radioGroup"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.04"
-            app:layout_constraintStart_toEndOf="@+id/radioGroup"
             app:layout_constraintTop_toTopOf="@+id/radioGroup" />
 
         <TextView
@@ -188,6 +242,7 @@
             android:textColor="@color/azul"
             android:textSize="8sp"
             android:textStyle="bold"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@+id/btpreserva"
             app:layout_constraintEnd_toStartOf="@+id/btpreserva"
             app:layout_constraintHorizontal_bias="1.0"
@@ -200,13 +255,16 @@
             android:layout_width="wrap_content"
             android:layout_height="34dp"
 
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="4dp"
             android:backgroundTint="@color/common_google_signin_btn_text_light_disabled"
             android:text="Programar Reserva"
             android:textColor="@color/Magent"
             android:textSize="8sp"
             android:textStyle="italic"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnavegar" />
 
 
 

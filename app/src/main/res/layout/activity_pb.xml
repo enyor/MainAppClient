@@ -10,102 +10,87 @@
 
     <ImageView
         android:id="@+id/avatar"
-        android:layout_width="79dp"
-        android:layout_height="69dp"
+        android:layout_width="32dp"
+        android:layout_height="81dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="50dp"
         android:adjustViewBounds="false"
-        android:src="?android:attr/textCheckMark"
-        android:tint="@android:color/holo_green_light"
+        android:alpha="0.4"
+
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_barber"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/share"
-        android:layout_width="45dp"
-        android:layout_height="37dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:src="@android:drawable/ic_menu_share"
-        android:tint="@android:color/holo_green_light"
-        android:tooltipText="Comparte los datos de tu reserva"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/t1" />
-
     <TextView
         android:id="@+id/Nombre"
         android:layout_width="wrap_content"
-        android:layout_height="27dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Fabuloso!!!"
+        android:layout_marginTop="35dp"
+        android:text="¡Fabuloso!"
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textColor="@color/Magent3"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/avatar" />
 
-    <View
-        android:id="@+id/separador"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:background="@android:color/darker_gray"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/msg" />
-
     <TextView
-        android:id="@+id/t1"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-
-
-        android:layout_marginEnd="24dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:text="Dirección : Calle Los Cedros nro 43 Ciudad de Santiago, Chile "
-        android:textAlignment="center"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/separador" />
-
-    <TextView
-        android:id="@+id/msg"
+        android:id="@+id/msg2"
         android:layout_width="260dp"
-        android:layout_height="54dp"
-
+        android:layout_height="24dp"
 
 
         android:layout_marginTop="8dp"
-        android:text="Haz reservado una cita con ANDREA para el servicio de Pedicure y Manicure  Hora: 10:00 Am "
+        android:fontFamily="@font/roboto"
+        android:text="Haz realizado la siguiente reserva"
         android:textAlignment="center"
+        android:textColor="@color/Magent3"
+        android:textSize="12sp"
+        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Nombre" />
 
+    <TextView
+        android:id="@+id/msg"
+        android:layout_width="220dp"
+        android:layout_height="90dp"
+
+
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rouded_blanco_borde_oscuro"
+        android:backgroundTint="@color/Magent2"
+        android:fontFamily="@font/roboto"
+        android:gravity="center_vertical|center_horizontal"
+        android:lineSpacingExtra="8sp"
+        android:paddingTop="8dp"
+        android:text="Enyor Piña \n 2:00 PM \n Av. Callao 686, 1022, CABA, Argentina"
+        android:textAlignment="center"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="12sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/msg2" />
+
     <Button
         android:id="@+id/btnavegar"
-        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
-        android:layout_height="48dp"
+        android:layout_height="25dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:backgroundTint="@color/azul"
-        android:text="Navegar"
+        android:background="@drawable/rouded_blanco_borde_oscuro"
+        android:fontFamily="@font/roboto"
+        android:text="Trazar ruta"
         android:textAllCaps="false"
-        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textColor="@color/Magent2"
         android:textColorLink="@color/azul"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
@@ -115,16 +100,19 @@
     <TextView
         android:id="@+id/textView3"
         android:layout_width="255dp"
-        android:layout_height="26dp"
+        android:layout_height="15dp"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:text="Nosotros te ayudamos a llegar a tu destino Cuando estes listo(a) dale click en Navegar "
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/roboto"
+        android:text="Nosotros te ayudamos a llegar a tu destino"
         android:textAlignment="center"
-        android:textSize="10sp"
+        android:textColor="@color/Magent3"
+        android:textSize="12sp"
+        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/share" />
+        app:layout_constraintTop_toBottomOf="@+id/msg" />
 
     <TextView
         android:id="@+id/textView4"
@@ -134,8 +122,10 @@
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
+        android:fontFamily="@font/roboto"
         android:text="Si cambias de opinión, recuerda que tienes 15 minutos para cancelar la cita."
         android:textAlignment="center"
+        android:textColor="@color/Magent3"
         android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

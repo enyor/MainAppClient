@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo"
+    android:background="@drawable/fondooscuro"
     android:orientation="vertical"
     android:verticalScrollbarPosition="right">
 
@@ -15,6 +15,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,28 +25,87 @@
         android:id="@+id/login_form"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="200dp">
+        android:layout_marginTop="180dp">
 
     </ScrollView>
+
+
+    <ImageView
+        android:id="@+id/fdown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/fdown" />
 
     <LinearLayout
         android:id="@+id/email_login_form"
         android:layout_width="0dp"
         android:layout_height="320dp"
-        android:layout_marginTop="80dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/login_form">
+        app:layout_constraintTop_toTopOf="@+id/login_form"
+        app:layout_constraintVertical_bias="0.43">
 
+        <com.andrognito.pinlockview.IndicatorDots
+            android:id="@+id/indicator_dots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-        <AutoCompleteTextView
-            android:id="@+id/email"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:gravity="top" />
+
+        <com.andrognito.pinlockview.PinLockView
+            android:id="@+id/pin_lock_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/indicator_dots"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="6dp"
+            app:keypadButtonSize="72dp"
+            app:keypadShowDeleteButton="true"
+            app:keypadTextColor="@color/white"
+            app:keypadTextSize="28dp" />
+
+        <EditText
+            android:id="@+id/Nombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="40dp"
             android:layout_marginStart="40dp"
+            android:background="@drawable/roundesd_white"
+            android:drawablePadding="16dp"
+            android:drawableStart="@android:drawable/ic_menu_mylocation"
+            android:enabled="false"
+            android:hint="@string/nombre"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:paddingStart="20dp"
+            android:singleLine="true"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textColorHint="@color/Verde"
+            android:textColorLink="@color/Magent"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            android:visibility="gone" />
+
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/roundesd_white"
             android:drawablePadding="16dp"
             android:drawableStart="@android:drawable/sym_action_email"
@@ -58,33 +118,71 @@
             android:textColorHint="@color/Verde"
             android:textColorLink="@color/Magent"
             android:textSize="14sp"
-            android:textStyle="italic" />
-
+            android:textStyle="italic"
+            android:visibility="gone" />
 
         <EditText
             android:id="@+id/password"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginEnd="60dp"
             android:layout_marginStart="40dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/roundesd_white"
+            android:background="@drawable/roundesd_translucent"
             android:drawablePadding="20dp"
             android:drawableStart="@android:drawable/ic_lock_idle_lock"
-            android:hint="@string/prompt_password"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:hint="••••"
             android:imeActionId="6"
             android:imeActionLabel="@string/action_sign_in_short"
             android:imeOptions="actionUnspecified"
-            android:inputType="textPassword"
+            android:inputType="numberPassword"
+            android:maxLength="4"
             android:maxLines="1"
             android:paddingStart="20dp"
             android:singleLine="true"
+            android:textAlignment="center"
             android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:textColorHint="@color/Verde"
             android:textColorLink="@color/Magent"
-            android:textSize="14sp"
-            android:textStyle="italic" />
+            android:textSize="60sp"
+            android:textStyle="italic"
+            android:visibility="gone" />
 
+
+        <EditText
+            android:id="@+id/confirmar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginEnd="60dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/roundesd_translucent"
+            android:drawablePadding="20dp"
+            android:drawableStart="@android:drawable/ic_lock_idle_lock"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:hint="••••"
+            android:imeActionId="6"
+            android:imeActionLabel="@string/action_sign_in_short"
+            android:imeOptions="actionUnspecified"
+            android:inputType="numberPassword"
+            android:maxLength="4"
+            android:maxLines="1"
+            android:paddingStart="20dp"
+            android:singleLine="true"
+            android:textAlignment="center"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textColorHint="@color/Verde"
+            android:textColorLink="@color/Magent"
+            android:textSize="60sp"
+            android:textStyle="italic"
+            android:visibility="gone" />
 
         <Button
             android:id="@+id/email_sign_in_button"
@@ -103,19 +201,10 @@
             android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:textColorLink="@color/Magent2"
             android:textSize="18sp"
-            android:textStyle="bold|italic" />
+            android:textStyle="bold|italic"
+            android:visibility="gone" />
 
     </LinearLayout>
-
-    <ImageView
-        android:id="@+id/fdown"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/fdown" />
 
     <ProgressBar
         android:id="@+id/login_progress"
@@ -128,5 +217,23 @@
         app:layout_constraintBottom_toTopOf="@+id/email_login_form"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Por favor cree un PIN de acceso"
+        android:textAlignment="center"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/email_login_form"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.62" />
 
 </android.support.constraint.ConstraintLayout>

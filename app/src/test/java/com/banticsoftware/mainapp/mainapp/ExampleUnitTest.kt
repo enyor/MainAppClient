@@ -1,4 +1,4 @@
-package com.banticsoftware.mainapp.mainapp
+package co.kaizenpro.mainapp.mainapp
 
 import org.junit.Test
 

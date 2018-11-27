@@ -11,9 +11,9 @@
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/fabtoolbar_toolbar"
+        app:layout_constraintBottom_toBottomOf="@+id/fabtoolbar_toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -29,15 +29,125 @@
         android:layout_marginTop="8dp"
         android:src="@android:drawable/ic_dialog_email"
         app:backgroundTint="@color/Magent"
+        app:layout_constraintStart_toEndOf="@+id/fabperfil"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabperfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="bottom|left|end"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_person_24"
+        app:backgroundTint="@color/Magent3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/InfoWindow"
+        android:layout_width="217dp"
+        android:layout_height="112dp"
+        android:layout_marginBottom="50dp"
+        android:layout_weight="1"
+        android:background="@drawable/ic_fondo_trader"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/imgAvatar"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <me.grantland.widget.AutofitTextView
+            android:id="@+id/NomT"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/roboto"
+            android:maxLines="1"
+
+            android:singleLine="true"
+
+
+            android:text="Karla Guindi"
+            android:textAlignment="center"
+            android:textColor="@color/Magent3"
+
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgAvatar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <me.grantland.widget.AutofitTextView
+            android:id="@+id/espT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/roboto"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="Estilista"
+            android:textColor="@color/Magent3"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgAvatar"
+            app:layout_constraintTop_toBottomOf="@+id/NomT" />
+
+        <RatingBar
+            android:id="@+id/ratT"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="2dp"
+            android:numStars="5"
+            android:rating="2"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgAvatar"
+            app:layout_constraintTop_toBottomOf="@+id/espT" />
+
+        <Button
+            android:id="@+id/btT"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="60dp"
+            android:layout_height="25dp"
+
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/rouded_blanco_borde_oscuro"
+            android:fontFamily="@font/roboto"
+            android:text="Ver más"
+            android:textAllCaps="false"
+            android:textColor="@color/Magent2"
+            android:textSize="10sp"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgAvatar"
+            app:layout_constraintTop_toBottomOf="@+id/ratT" />
+    </android.support.constraint.ConstraintLayout>
 
     <LinearLayout
         android:id="@id/fabtoolbar_toolbar"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/Magent"
+        android:background="@color/cardview_light_background"
         android:orientation="horizontal"
         android:paddingBottom="5dp"
         android:paddingTop="5dp"
@@ -51,6 +161,13 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgnivel"
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/flecha_2" />
 
             <TextView
                 android:id="@+id/txnivel"
@@ -70,12 +187,30 @@
                 android:layout_margin="4dp"
                 android:background="@color/Magent2"
                 android:contextClickable="false"
+                android:dropDownVerticalOffset="55dp"
                 android:entries="@array/Niveles"
-                android:pointerIcon="arrow"
                 android:importantForAutofill="no"
                 android:popupBackground="@color/Magent2"
                 android:scrollIndicators="end" />
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="3dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/separador3"
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/Magent2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Especialidad" />
         </LinearLayout>
 
         <LinearLayout
@@ -84,6 +219,13 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgsexo"
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/ic_sexo" />
 
             <TextView
                 android:id="@+id/txgenero"
@@ -104,8 +246,26 @@
                 android:background="@color/Magent2"
                 android:entries="@array/Generos"
                 android:importantForAutofill="no"
-                android:popupBackground="@color/Magent2" />
+                android:popupBackground="@color/Magent2"
+                android:dropDownVerticalOffset="55dp"/>
 
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="3dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/separador4"
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/Magent2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Especialidad" />
         </LinearLayout>
 
         <LinearLayout
@@ -115,6 +275,13 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:textAlignment="center">
+
+            <ImageView
+                android:id="@+id/imgespecialidad"
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/ic_especialidad" />
 
             <TextView
                 android:id="@+id/txservicio"
@@ -135,8 +302,27 @@
                 android:background="@color/Magent2"
                 android:entries="@array/Servicios"
                 android:importantForAutofill="no"
-                android:popupBackground="@color/Magent2" />
+                android:popupBackground="@color/Magent2"
+                android:dropDownVerticalOffset="55dp"/>
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="3dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/separador5"
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/Magent2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Especialidad" />
         </LinearLayout>
 
         <LinearLayout
@@ -145,6 +331,13 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgrate"
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/ic_rate" />
 
             <TextView
                 android:id="@+id/txrate"
@@ -166,7 +359,8 @@
                 android:background="@color/Magent2"
                 android:entries="@array/Rate"
                 android:importantForAutofill="no"
-                android:popupBackground="@color/Magent2" />
+                android:popupBackground="@color/Magent2"
+                android:dropDownVerticalOffset="55dp"/>
 
         </LinearLayout>
 

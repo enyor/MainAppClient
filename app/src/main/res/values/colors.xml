@@ -4,10 +4,13 @@
     <color name="colorPrimaryDark">#303f9f</color>
     <color name="colorAccent">#ead1dc</color>
     <color name="colorAlert">#3f51b5</color>
-    <color name="azul">#1c8aff</color>
-    <color name="Magent">#fc00eb</color>
-    <color name="Magent2">#fc4df1</color>
-    <color name="Magent3">#DC2ED2</color>
-    <color name="Verde">#3accb7</color>
+    <color name="azul">#b7c2d4</color>
+    <color name="Magent">#9d65aa</color>
+    <color name="Magent2">#9d65aa</color>
+    <color name="Magent3">#462a50</color>
+    <color name="Verde">#43fbe5</color>
+    <color name="rojo">#ffcc0000</color>
+    <color name="amarillo">#ffe30e</color>
+    <color name="GrisPrimario">#f2f2f2</color>
 
 </resources>

@@ -8,6 +8,37 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:124655362967:android:1901005ab34c7c65",
+        "android_client_info": {
+          "package_name": "co.kaizenpro.mainapp.mainapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "124655362967-ip5fec9viaoncp6g2t7ppc7i872tagcr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4TJDagoONXMpJCqfzjDxJItTyiiiPqUU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:124655362967:android:00b6e899606955ab",
         "android_client_info": {
           "package_name": "com.banticsoftware.mainapp.mainapp"

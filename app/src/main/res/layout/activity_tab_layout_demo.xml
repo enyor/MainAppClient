@@ -1,18 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<!--android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" -->
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:orientation="vertical"
     tools:context=".TabLayoutDemoActivity">
 
-    <android.support.design.widget.AppBarLayout
+    <!--ImageView
+        android:id="@+id/cover"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/Verde"
-        android:theme="@style/AppTheme">
+        android:layout_height="123dp"
+        android:contentDescription="cover"
+        android:cropToPadding="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_launcher_background" /-->
+
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/common_google_signin_btn_text_dark_default"
+        android:theme="@style/AppTheme"
+        app:layout_constraintBottom_toTopOf="@+id/ly_reserva"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <!--android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -25,26 +46,158 @@
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabGravity="fill"
-            app:tabMode="fixed" />
+            android:layout_marginStart="50dp"
+            android:backgroundTint="@color/Magent3"
+            android:textAlignment="center"
+            app:tabGravity="center"
+            app:tabIndicatorColor="@color/cardview_light_background"
+            app:tabMode="scrollable"
+            app:tabPaddingEnd="10dp"
+            app:tabPaddingStart="10dp"
+            app:tabSelectedTextColor="@color/cardview_light_background"
+            app:tabTextColor="@color/common_google_signin_btn_text_light_default" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbarAlwaysDrawVerticalTrack="false"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/pager"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/ly_reserva"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        />
+        android:layout_height="110dp"
+        android:background="@color/common_google_signin_btn_text_dark_default"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
 
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.06"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
+            <RadioButton
+                android:id="@+id/rdbOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:fontFamily="@font/roboto"
+                android:text=""
+                android:textColor="@color/Magent3"
+                android:textColorHint="@color/Verde"
+                android:textColorLink="@color/Magent3"
+                android:textSize="8sp" />
 
-        android:src="@android:drawable/ic_dialog_email" />
+            <RadioButton
+                android:id="@+id/rdbTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:fontFamily="@font/roboto"
+                android:shadowColor="@color/Verde"
+                android:text=""
+                android:textColor="@color/Magent3"
+                android:textSize="8sp" />
 
-</android.support.design.widget.CoordinatorLayout>
+            <RadioButton
+                android:id="@+id/rdbThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:fontFamily="@font/roboto"
+                android:shadowColor="@color/Verde"
+                android:text=""
+                android:textColor="@color/Magent3"
+                android:textSize="8sp" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="165dp"
+            android:layout_height="42dp"
+
+
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/azul"
+            android:fontFamily="@font/roboto"
+            android:text='"Basado en la distancia y en tiempo máximo de espera de tu Trader puedes reservar en estos horarios"'
+            android:textAlignment="center"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+
+            android:textSize="10sp"
+            android:textStyle="italic"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/radioGroup"
+            app:layout_constraintStart_toEndOf="@+id/tverror"
+            app:layout_constraintTop_toTopOf="@+id/radioGroup" />
+
+        <Button
+            android:id="@+id/btnavegar"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="97dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/rouded_morado_borde_oscuro"
+            android:fontFamily="@font/roboto"
+            android:text="Reservar"
+            android:textAllCaps="false"
+            android:textColor="?android:attr/colorForegroundInverse"
+            android:textColorLink="@color/azul"
+            android:textStyle="bold|italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btpreserva"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="128dp"
+            android:layout_height="22dp"
+
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rouded_blanco_borde_oscuro"
+            android:fontFamily="@font/roboto"
+            android:text="Programar reserva"
+            android:textAllCaps="false"
+            android:textColor="@color/Magent2"
+            android:textSize="8sp"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="@+id/btnavegar"
+            app:layout_constraintStart_toStartOf="@+id/btnavegar"
+            app:layout_constraintTop_toBottomOf="@+id/btnavegar" />
+
+        <TextView
+            android:id="@+id/tverror"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintBottom_toBottomOf="@+id/radioGroup"
+            app:layout_constraintStart_toEndOf="@+id/radioGroup"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <!--/android.support.design.widget.CoordinatorLayout-->
+</android.support.constraint.ConstraintLayout>

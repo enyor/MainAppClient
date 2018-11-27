@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="@color/cardview_light_background"
     android:orientation="vertical"
     android:verticalScrollbarPosition="right">
 
@@ -19,6 +19,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/ic_launcher_round" />
+
+
 
     <TextView
         android:id="@+id/Nombre"
@@ -103,7 +105,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=""
-            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textColor="@color/cardview_dark_background"
             android:textSize="10sp" />
 
         <RadioButton
@@ -111,7 +113,7 @@
             android:layout_width="126dp"
             android:layout_height="wrap_content"
             android:text=""
-            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textColor="@color/cardview_dark_background"
             android:textSize="10sp" />
 
         <RadioButton
@@ -119,7 +121,7 @@
             android:layout_width="135dp"
             android:layout_height="wrap_content"
             android:text=""
-            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textColor="@color/cardview_dark_background"
             android:textSize="10sp" />
 
     </RadioGroup>
@@ -163,8 +165,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
 
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="8dp"
+
         android:layout_marginTop="28dp"
         android:background="@color/azul"
         android:text='"Basado en la distancia y en tiempo máximo de espera de tu Trader puedes reservar en estos horarios"'

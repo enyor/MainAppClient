@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.banticsoftware.mainapp.mainapp">
+    package="co.kaizenpro.mainapp.mainapp">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <!--
@@ -17,6 +17,9 @@
     -->
     <permission android:name="android.permission.android.permission.INTERACT_ACROSS_USERS_FULL"
         android:protectionLevel="signature"/>
+    <permission
+        android:name="co.kaizenpro.mainapp.mainapp.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
 
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -26,9 +29,11 @@
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
+
     <uses-feature android:name="android.hardware.location.gps" />
 
     <application
+        android:name="co.kaizenpro.mainapp.mainapp.TraderDatos"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -36,7 +41,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
         <activity
-            android:name=".MainActivity"
+            android:name="co.kaizenpro.mainapp.mainapp.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.Design.NoActionBar">
             <intent-filter>
@@ -53,34 +58,47 @@
              sign the APK for publishing.
              You can define the keys for the debug and release targets in src/debug/ and src/release/. 
         -->
-        <meta-data
+        <!--meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+            android:value="@string/google_maps_key" /-->
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDrgvfnlT0T43H6HQkk1YEXaHlta9fJAbM" />
+        <meta-data
+            android:name="co.kaizenpro.mainapp.mainapp.GlideConfiguration"
+            android:value="GlideModule"/>
 
         <activity
-            android:name=".MapsActivity"
+            android:name="co.kaizenpro.mainapp.mainapp.MapsActivity"
             android:label="@string/title_activity_maps"
             android:theme="@style/Theme.Design.NoActionBar">
+        </activity>
+
+        <activity
+            android:name="co.kaizenpro.mainapp.mainapp.RegisterActivity"
+            android:theme="@style/Theme.Design.NoActionBar"/>
 
             <!--
                 meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.banticsoftware.mainapp.mainapp.MainActivity" /
             -->
-        </activity>
         <activity
-            android:name=".Popup"
+            android:name="co.kaizenpro.mainapp.mainapp.Popup"
             android:theme="@style/AppTheme.CustomTheme" />
         <activity
-            android:name=".MapsDirActivity"
+            android:name="co.kaizenpro.mainapp.mainapp.MapsDirActivity"
             android:label="@string/title_activity_maps_dir" />
         <activity
-            android:name=".Info_reserva"
+            android:name="co.kaizenpro.mainapp.mainapp.Info_reserva"
             android:label="Reserva" />
         <activity
-            android:name=".TabLayoutDemoActivity"
-            android:theme="@style/AppTheme.CustomTheme" />
-        <activity android:name=".Chat"></activity>
+            android:name="co.kaizenpro.mainapp.mainapp.TabLayoutDemoActivity"
+            android:theme="@style/AppTheme.NoActionBarTraslucent" />
+        <activity android:name="co.kaizenpro.mainapp.mainapp.Chat"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="co.kaizenpro.mainapp.mainapp.Popup_datos_aux"
+            android:theme="@style/AppTheme.NoActionBar" />
+
     </application>
 
 </manifest>

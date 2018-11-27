@@ -3,12 +3,13 @@
 
     <!-- Strings related to login -->
     <string name="prompt_email">Correo</string>
-    <string name="prompt_password">Contraseña</string>
+    <string name="prompt_password">PIN</string>
     <string name="action_sign_in">Acceder</string>
     <string name="action_sign_in_short">Registrarse</string>
     <string name="error_invalid_email">El correo es inválido</string>
+    <string name="error_password_mismatch">Las Contraseñas no coinciden</string>
     <string name="error_invalid_password">La Contraseña es muy corta</string>
-    <string name="error_incorrect_password">La Contraseña es incorrecta</string>
+    <string name="error_incorrect_password">El PIN introducido es incorrecto</string>
     <string name="error_field_required">El campo es requerido</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email completions."
     </string>
@@ -53,5 +54,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="conf_password">Confirmar PIN</string>
+    <string name="nombre">Nombre</string>
 
 </resources>
