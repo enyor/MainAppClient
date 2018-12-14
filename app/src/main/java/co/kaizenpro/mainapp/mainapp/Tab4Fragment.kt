@@ -10,6 +10,7 @@ import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.transition.TransitionManager
+import android.util.DisplayMetrics
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -31,6 +32,8 @@ class Tab4Fragment : Fragment() {
      //var recyclerPersonajes: RecyclerView? = null
     var listaPersonaje: ArrayList<ItemPortafolio>? = null
     var collapse = true
+    var height_up = 390
+    var height_down = 132
 
 
 
@@ -47,6 +50,15 @@ class Tab4Fragment : Fragment() {
         val constraintSet2 = ConstraintSet()
         constraintSet2.clone(v.context, R.layout.fragment_tab4_alt)
         var changed = false
+
+
+        val dm = DisplayMetrics()
+        activity.windowManager.defaultDisplay.getMetrics(dm)
+
+        height_up = (dm.heightPixels.toDouble() * 0.68).toInt()
+        height_down = (dm.heightPixels.toDouble() * 0.23).toInt()
+
+        v.imageView.layoutParams.height = height_up
 
 
         v.nomP.setText(Trader.nombre)
@@ -67,7 +79,11 @@ class Tab4Fragment : Fragment() {
                 itemsData.add(ItemPortafolio(portafolio.id_item, portafolio.titulo, portafolio.contenido, portafolio.imagen))
             }
             if(itemsData.isNotEmpty()) {
+                var ini = i+1
+                var fin = itemsData.size
+                var infot = ini.toString()+"/"+fin.toString()
 
+                v.infoimg.setText(infot)
                 v.textimg.setText(itemsData[i].nombre)
                 v.textoampD.setText(itemsData[i].info)
                /* Picasso.with(v.context)
@@ -146,8 +162,10 @@ class Tab4Fragment : Fragment() {
 
             if (changed) {
                 v.floatingActionButton.setImageResource(R.drawable.ic_arrow_down)
+                v.imageView.layoutParams.height = height_down
             } else {
                 v.floatingActionButton.setImageResource(R.drawable.ic_info_i_blue)
+                v.imageView.layoutParams.height = height_up
             }
 
         }

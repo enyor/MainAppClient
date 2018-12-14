@@ -76,11 +76,7 @@ class TabLayoutDemoActivity : AppCompatActivity() {
         configureTabLayout()
 
 
-        val dm = DisplayMetrics()
-        windowManager.defaultDisplay.getMetrics(dm)
 
-        val width = dm.widthPixels
-        val height = dm.heightPixels
 
         //comentado para dejar ajuste completo
       //  window.setLayout((width * .9).toInt(), (height * .9).toInt())
